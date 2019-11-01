@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:18882/FcpsUserManagerService?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DTO_UserManager.DOM_Requests" />
+  <xs:import schemaLocation="http://localhost:18882/FcpsUserManagerService?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/DOM_UserManager.DOM" />
+  <xs:element name="InsertNewFCMobileUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DTO_UserManager.DOM_Requests" minOccurs="0" name="request" nillable="true" type="q1:InsertNewFCMobileUserRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertNewFCMobileUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DOM_UserManager.DOM" minOccurs="0" name="InsertNewFCMobileUserResult" nillable="true" type="q2:InsertNewFCMobileUserResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeFCMobileUserPassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DTO_UserManager.DOM_Requests" minOccurs="0" name="request" nillable="true" type="q3:ChangeFCMobileUserPasswordRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeFCMobileUserPasswordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DOM_UserManager.DOM" minOccurs="0" name="ChangeFCMobileUserPasswordResult" nillable="true" type="q4:ChangeFCMobileUserPasswordResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActivateFCMobileUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DTO_UserManager.DOM_Requests" minOccurs="0" name="request" nillable="true" type="q5:ActivateFCMobileUserRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActivateFCMobileUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DOM_UserManager.DOM" minOccurs="0" name="ActivateFCMobileUserResult" nillable="true" type="q6:ActivateFCMobileUserResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActivateActionRule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/DTO_UserManager.DOM_Requests" minOccurs="0" name="request" nillable="true" type="q7:ActivateActionRuleRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActivateActionRuleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/DOM_UserManager.DOM" minOccurs="0" name="ActivateActionRuleResult" nillable="true" type="q8:ActivateActionRuleResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActivateUserRoleGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/DTO_UserManager.DOM_Requests" minOccurs="0" name="request" nillable="true" type="q9:ActivateUserRoleGroupRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActivateUserRoleGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/DOM_UserManager.DOM" minOccurs="0" name="ActivateUserRoleGroupResult" nillable="true" type="q10:ActivateUserRoleGroupResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddRoleToRoleGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/DTO_UserManager.DOM_Requests" minOccurs="0" name="request" nillable="true" type="q11:AddRoleToRoleGroupRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddRoleToRoleGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/DOM_UserManager.DOM" minOccurs="0" name="AddRoleToRoleGroupResult" nillable="true" type="q12:AddRoleToRoleGroupResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddUserToRoleGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/DTO_UserManager.DOM_Requests" minOccurs="0" name="request" nillable="true" type="q13:AddUserToRoleGroupRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddUserToRoleGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/DOM_UserManager.DOM" minOccurs="0" name="AddUserToRoleGroupResult" nillable="true" type="q14:AddUserToRoleGroupResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssignActionToRole">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/DTO_UserManager.DOM_Requests" minOccurs="0" name="request" nillable="true" type="q15:AssignActionToRoleRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssignActionToRoleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/DOM_UserManager.DOM" minOccurs="0" name="AssignActionToRoleResult" nillable="true" type="q16:AssignActionToRoleResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoleGroupById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/DTO_UserManager.DOM_Requests" minOccurs="0" name="request" nillable="true" type="q17:GetRoleGroupByIdRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoleGroupByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/DOM_UserManager.DOM" minOccurs="0" name="GetRoleGroupByIdResult" nillable="true" type="q18:GetRoleGroupByIdResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateRoleGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/DTO_UserManager.DOM_Requests" minOccurs="0" name="request" nillable="true" type="q19:CreateRoleGroupRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateRoleGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/DOM_UserManager.DOM" minOccurs="0" name="CreateRoleGroupResult" nillable="true" type="q20:CreateRoleGroupResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoleById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/DTO_UserManager.DOM_Requests" minOccurs="0" name="request" nillable="true" type="q21:GetRoleByIdRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoleByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/DOM_UserManager.DOM" minOccurs="0" name="GetRoleByIdResult" nillable="true" type="q22:GetRoleByIdResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateRole">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/DTO_UserManager.DOM_Requests" minOccurs="0" name="request" nillable="true" type="q23:CreateRoleRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateRoleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/DOM_UserManager.DOM" minOccurs="0" name="CreateRoleResult" nillable="true" type="q24:CreateRoleResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteRoleGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/DTO_UserManager.DOM_Requests" minOccurs="0" name="request" nillable="true" type="q25:DeleteRoleGroupRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteRoleGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/DOM_UserManager.DOM" minOccurs="0" name="DeleteRoleGroupResult" nillable="true" type="q26:DeleteRoleGroupResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteRole">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/DTO_UserManager.DOM_Requests" minOccurs="0" name="request" nillable="true" type="q27:DeleteRoleRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteRoleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/DOM_UserManager.DOM" minOccurs="0" name="DeleteRoleResult" nillable="true" type="q28:DeleteRoleResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisactivateActionRule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/DTO_UserManager.DOM_Requests" minOccurs="0" name="request" nillable="true" type="q29:DisactivateActionRuleRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisactivateActionRuleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/DOM_UserManager.DOM" minOccurs="0" name="DisactivateActionRuleResult" nillable="true" type="q30:DisactivateActionRuleResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisactivateUserRoleGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/DTO_UserManager.DOM_Requests" minOccurs="0" name="request" nillable="true" type="q31:DisactivateUserRoleGroupRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisactivateUserRoleGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/DOM_UserManager.DOM" minOccurs="0" name="DisactivateUserRoleGroupResult" nillable="true" type="q32:DisactivateUserRoleGroupResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditRoleGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/DTO_UserManager.DOM_Requests" minOccurs="0" name="request" nillable="true" type="q33:EditRoleGroupRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditRoleGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/DOM_UserManager.DOM" minOccurs="0" name="EditRoleGroupResult" nillable="true" type="q34:EditRoleGroupResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditRole">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/DTO_UserManager.DOM_Requests" minOccurs="0" name="request" nillable="true" type="q35:EditRoleRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditRoleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/DOM_UserManager.DOM" minOccurs="0" name="EditRoleResult" nillable="true" type="q36:EditRoleResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveRoleFromRoleGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/DTO_UserManager.DOM_Requests" minOccurs="0" name="request" nillable="true" type="q37:RemoveRoleFromRoleGroupRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveRoleFromRoleGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/DOM_UserManager.DOM" minOccurs="0" name="RemoveRoleFromRoleGroupResult" nillable="true" type="q38:RemoveRoleFromRoleGroupResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveUserFromRoleGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/DTO_UserManager.DOM_Requests" minOccurs="0" name="request" nillable="true" type="q39:RemoveUserFromRoleGroupRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveUserFromRoleGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/DOM_UserManager.DOM" minOccurs="0" name="RemoveUserFromRoleGroupResult" nillable="true" type="q40:RemoveUserFromRoleGroupResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateNewKioskUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/DOM_UserManager.DOM" minOccurs="0" name="request" nillable="true" type="q41:CreateNewKioskUserRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateNewKioskUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/DOM_UserManager.DOM" minOccurs="0" name="CreateNewKioskUserResult" nillable="true" type="q42:CreateNewKioskUserResposne" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/DOM_UserManager.DOM" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DOM_UserManager.DOM" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:18882/FcpsUserManagerService?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" />
+  <xs:import schemaLocation="http://localhost:18882/FcpsUserManagerService?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/DB_API_STS.STSModel" />
+  <xs:complexType name="InsertNewFCMobileUserResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" base="q1:FCPSResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="StsUserId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InsertNewFCMobileUserResponse" nillable="true" type="tns:InsertNewFCMobileUserResponse" />
+  <xs:complexType name="ChangeFCMobileUserPasswordResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" base="q2:FCPSResponseBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChangeFCMobileUserPasswordResponse" nillable="true" type="tns:ChangeFCMobileUserPasswordResponse" />
+  <xs:complexType name="ActivateFCMobileUserResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" base="q3:FCPSResponseBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ActivateFCMobileUserResponse" nillable="true" type="tns:ActivateFCMobileUserResponse" />
+  <xs:complexType name="ActivateActionRuleResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" base="q4:FCPSResponseBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ActivateActionRuleResponse" nillable="true" type="tns:ActivateActionRuleResponse" />
+  <xs:complexType name="ActivateUserRoleGroupResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" base="q5:FCPSResponseBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ActivateUserRoleGroupResponse" nillable="true" type="tns:ActivateUserRoleGroupResponse" />
+  <xs:complexType name="AddRoleToRoleGroupResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" base="q6:FCPSResponseBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddRoleToRoleGroupResponse" nillable="true" type="tns:AddRoleToRoleGroupResponse" />
+  <xs:complexType name="AddUserToRoleGroupResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" base="q7:FCPSResponseBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddUserToRoleGroupResponse" nillable="true" type="tns:AddUserToRoleGroupResponse" />
+  <xs:complexType name="AssignActionToRoleResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" base="q8:FCPSResponseBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AssignActionToRoleResponse" nillable="true" type="tns:AssignActionToRoleResponse" />
+  <xs:complexType name="GetRoleGroupByIdResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" base="q9:FCPSResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/DB_API_STS.STSModel" minOccurs="0" name="RoleGroup" nillable="true" type="q10:GetRoleGroupById_Result" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetRoleGroupByIdResponse" nillable="true" type="tns:GetRoleGroupByIdResponse" />
+  <xs:complexType name="CreateRoleGroupResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q11="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" base="q11:FCPSResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RoleGroupId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreateRoleGroupResponse" nillable="true" type="tns:CreateRoleGroupResponse" />
+  <xs:complexType name="GetRoleByIdResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q12="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" base="q12:FCPSResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/DB_API_STS.STSModel" minOccurs="0" name="Role" nillable="true" type="q13:GetRoleById_Result" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetRoleByIdResponse" nillable="true" type="tns:GetRoleByIdResponse" />
+  <xs:complexType name="CreateRoleResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q14="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" base="q14:FCPSResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RoleId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreateRoleResponse" nillable="true" type="tns:CreateRoleResponse" />
+  <xs:complexType name="DeleteRoleGroupResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q15="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" base="q15:FCPSResponseBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DeleteRoleGroupResponse" nillable="true" type="tns:DeleteRoleGroupResponse" />
+  <xs:complexType name="DeleteRoleResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q16="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" base="q16:FCPSResponseBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DeleteRoleResponse" nillable="true" type="tns:DeleteRoleResponse" />
+  <xs:complexType name="DisactivateActionRuleResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q17="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" base="q17:FCPSResponseBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DisactivateActionRuleResponse" nillable="true" type="tns:DisactivateActionRuleResponse" />
+  <xs:complexType name="DisactivateUserRoleGroupResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q18="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" base="q18:FCPSResponseBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DisactivateUserRoleGroupResponse" nillable="true" type="tns:DisactivateUserRoleGroupResponse" />
+  <xs:complexType name="EditRoleGroupResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q19="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" base="q19:FCPSResponseBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EditRoleGroupResponse" nillable="true" type="tns:EditRoleGroupResponse" />
+  <xs:complexType name="EditRoleResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q20="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" base="q20:FCPSResponseBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EditRoleResponse" nillable="true" type="tns:EditRoleResponse" />
+  <xs:complexType name="RemoveRoleFromRoleGroupResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q21="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" base="q21:FCPSResponseBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RemoveRoleFromRoleGroupResponse" nillable="true" type="tns:RemoveRoleFromRoleGroupResponse" />
+  <xs:complexType name="RemoveUserFromRoleGroupResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q22="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" base="q22:FCPSResponseBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RemoveUserFromRoleGroupResponse" nillable="true" type="tns:RemoveUserFromRoleGroupResponse" />
+  <xs:complexType name="CreateNewKioskUserRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q23="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" base="q23:FCPSRequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="KioskId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreateNewKioskUserRequest" nillable="true" type="tns:CreateNewKioskUserRequest" />
+  <xs:complexType name="CreateNewKioskUserResposne">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q24="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" base="q24:FCPSResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Credentials" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreateNewKioskUserResposne" nillable="true" type="tns:CreateNewKioskUserResposne" />
+</xs:schema>

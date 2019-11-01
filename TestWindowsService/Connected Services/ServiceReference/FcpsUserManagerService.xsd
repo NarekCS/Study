@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/DTO_UserManager.DOM_Requests" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DTO_UserManager.DOM_Requests" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:18882/FcpsUserManagerService?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.SharedEnums" />
+  <xs:import schemaLocation="http://localhost:18882/FcpsUserManagerService?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" />
+  <xs:import schemaLocation="http://localhost:18882/FcpsUserManagerService?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/DTO_UserManager" />
+  <xs:complexType name="InsertNewFCMobileUserRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" base="q1:FCPSRequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.SharedEnums" minOccurs="0" name="UserTypeId" type="q2:STS_Caller_OriginTypeId" />
+          <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InsertNewFCMobileUserRequest" nillable="true" type="tns:InsertNewFCMobileUserRequest" />
+  <xs:complexType name="ChangeFCMobileUserPasswordRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" base="q3:FCPSRequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MobileUserId" type="xs:int" />
+          <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChangeFCMobileUserPasswordRequest" nillable="true" type="tns:ChangeFCMobileUserPasswordRequest" />
+  <xs:complexType name="ActivateFCMobileUserRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" base="q4:FCPSRequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ActivationStsUserId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ActivateFCMobileUserRequest" nillable="true" type="tns:ActivateFCMobileUserRequest" />
+  <xs:complexType name="ActivateActionRuleRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" base="q5:FCPSRequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DTO_UserManager" minOccurs="0" name="RequestData" nillable="true" type="q6:ActivateActionRuleDC" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ActivateActionRuleRequest" nillable="true" type="tns:ActivateActionRuleRequest" />
+  <xs:complexType name="ActivateUserRoleGroupRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" base="q7:FCPSRequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/DTO_UserManager" minOccurs="0" name="RequestData" nillable="true" type="q8:ActivateUserRoleGroupDC" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ActivateUserRoleGroupRequest" nillable="true" type="tns:ActivateUserRoleGroupRequest" />
+  <xs:complexType name="AddRoleToRoleGroupRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" base="q9:FCPSRequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/DTO_UserManager" minOccurs="0" name="RequestData" nillable="true" type="q10:AddRoleToRoleGroupDC" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddRoleToRoleGroupRequest" nillable="true" type="tns:AddRoleToRoleGroupRequest" />
+  <xs:complexType name="AddUserToRoleGroupRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q11="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" base="q11:FCPSRequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/DTO_UserManager" minOccurs="0" name="RequestData" nillable="true" type="q12:AddUserToRoleGroupDC" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddUserToRoleGroupRequest" nillable="true" type="tns:AddUserToRoleGroupRequest" />
+  <xs:complexType name="AssignActionToRoleRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q13="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" base="q13:FCPSRequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/DTO_UserManager" minOccurs="0" name="RequestData" nillable="true" type="q14:AssignActionToRoleDC" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AssignActionToRoleRequest" nillable="true" type="tns:AssignActionToRoleRequest" />
+  <xs:complexType name="GetRoleGroupByIdRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q15="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" base="q15:FCPSRequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/DTO_UserManager" minOccurs="0" name="RequestData" nillable="true" type="q16:GetRoleGroupByIdDC" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetRoleGroupByIdRequest" nillable="true" type="tns:GetRoleGroupByIdRequest" />
+  <xs:complexType name="CreateRoleGroupRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q17="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" base="q17:FCPSRequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/DTO_UserManager" minOccurs="0" name="RequestData" nillable="true" type="q18:CreateRoleGroupDC" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreateRoleGroupRequest" nillable="true" type="tns:CreateRoleGroupRequest" />
+  <xs:complexType name="GetRoleByIdRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q19="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" base="q19:FCPSRequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/DTO_UserManager" minOccurs="0" name="RequestData" nillable="true" type="q20:GetRoleByIdDC" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetRoleByIdRequest" nillable="true" type="tns:GetRoleByIdRequest" />
+  <xs:complexType name="CreateRoleRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q21="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" base="q21:FCPSRequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/DTO_UserManager" minOccurs="0" name="RequestData" nillable="true" type="q22:CreateRoleDC" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreateRoleRequest" nillable="true" type="tns:CreateRoleRequest" />
+  <xs:complexType name="DeleteRoleGroupRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q23="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" base="q23:FCPSRequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/DTO_UserManager" minOccurs="0" name="RequestData" nillable="true" type="q24:DeleteRoleGroupDC" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DeleteRoleGroupRequest" nillable="true" type="tns:DeleteRoleGroupRequest" />
+  <xs:complexType name="DeleteRoleRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q25="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" base="q25:FCPSRequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/DTO_UserManager" minOccurs="0" name="RequestData" nillable="true" type="q26:DeleteRoleDC" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DeleteRoleRequest" nillable="true" type="tns:DeleteRoleRequest" />
+  <xs:complexType name="DisactivateActionRuleRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q27="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" base="q27:FCPSRequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/DTO_UserManager" minOccurs="0" name="RequestData" nillable="true" type="q28:DisactivateActionRuleDC" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DisactivateActionRuleRequest" nillable="true" type="tns:DisactivateActionRuleRequest" />
+  <xs:complexType name="DisactivateUserRoleGroupRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q29="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" base="q29:FCPSRequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/DTO_UserManager" minOccurs="0" name="RequestData" nillable="true" type="q30:DisactivateUserRoleGroupDC" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DisactivateUserRoleGroupRequest" nillable="true" type="tns:DisactivateUserRoleGroupRequest" />
+  <xs:complexType name="EditRoleGroupRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q31="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" base="q31:FCPSRequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/DTO_UserManager" minOccurs="0" name="RequestData" nillable="true" type="q32:EditRoleGroupDC" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EditRoleGroupRequest" nillable="true" type="tns:EditRoleGroupRequest" />
+  <xs:complexType name="EditRoleRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q33="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" base="q33:FCPSRequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/DTO_UserManager" minOccurs="0" name="RequestData" nillable="true" type="q34:EditRoleDC" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EditRoleRequest" nillable="true" type="tns:EditRoleRequest" />
+  <xs:complexType name="RemoveRoleFromRoleGroupRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q35="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" base="q35:FCPSRequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/DTO_UserManager" minOccurs="0" name="RequestData" nillable="true" type="q36:RemoveRoleFromRoleGroupDC" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RemoveRoleFromRoleGroupRequest" nillable="true" type="tns:RemoveRoleFromRoleGroupRequest" />
+  <xs:complexType name="RemoveUserFromRoleGroupRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q37="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" base="q37:FCPSRequestBase">
+        <xs:sequence>
+          <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/DTO_UserManager" minOccurs="0" name="RequestData" nillable="true" type="q38:RemoveUserFromRoleGroupDC" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RemoveUserFromRoleGroupRequest" nillable="true" type="tns:RemoveUserFromRoleGroupRequest" />
+</xs:schema>

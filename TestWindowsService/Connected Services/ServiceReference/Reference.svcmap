@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3cffb35c-0217-4a3d-aa26-e7177c6306c7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:18882/FcpsUserManagerService" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="FcpsUserManagerService.xsd" MetadataType="Schema" ID="0bd069cc-f0f1-4e31-95a1-60646cfbc103" SourceId="1" SourceUrl="http://localhost:18882/FcpsUserManagerService?xsd=xsd2" />
+    <MetadataFile FileName="FcpsUserManagerService1.xsd" MetadataType="Schema" ID="ed647c50-b2e8-4432-84b6-ae15c4813c02" SourceId="1" SourceUrl="http://localhost:18882/FcpsUserManagerService?xsd=xsd3" />
+    <MetadataFile FileName="FcpsUserManagerService2.xsd" MetadataType="Schema" ID="02af2296-3c12-40df-8811-e31510194f0f" SourceId="1" SourceUrl="http://localhost:18882/FcpsUserManagerService?xsd=xsd0" />
+    <MetadataFile FileName="FcpsUserManagerService3.xsd" MetadataType="Schema" ID="d8e2390f-2c52-4cb3-9b4d-ec8b1202bb54" SourceId="1" SourceUrl="http://localhost:18882/FcpsUserManagerService?xsd=xsd1" />
+    <MetadataFile FileName="FcpsUserManagerService4.xsd" MetadataType="Schema" ID="adb179bb-760d-45d9-9772-aa72f93b6a57" SourceId="1" SourceUrl="http://localhost:18882/FcpsUserManagerService?xsd=xsd6" />
+    <MetadataFile FileName="FcpsUserManagerService5.xsd" MetadataType="Schema" ID="6d0973d6-f97b-4295-ae08-a541628058dc" SourceId="1" SourceUrl="http://localhost:18882/FcpsUserManagerService?xsd=xsd7" />
+    <MetadataFile FileName="FcpsUserManagerService.disco" MetadataType="Disco" ID="2b463761-a5ea-4612-97cd-6980f82e6458" SourceId="1" SourceUrl="http://localhost:18882/FcpsUserManagerService?disco" />
+    <MetadataFile FileName="FcpsUserManagerService6.xsd" MetadataType="Schema" ID="d7903495-3abd-41fd-8b25-65fc84dab316" SourceId="1" SourceUrl="http://localhost:18882/FcpsUserManagerService?xsd=xsd5" />
+    <MetadataFile FileName="FcpsUserManagerService7.xsd" MetadataType="Schema" ID="1c57d83e-870c-48e3-97b0-2a234cbb5b93" SourceId="1" SourceUrl="http://localhost:18882/FcpsUserManagerService?xsd=xsd8" />
+    <MetadataFile FileName="FcpsUserManagerService8.xsd" MetadataType="Schema" ID="4c988f2a-0c16-42aa-8072-2b396fae1d89" SourceId="1" SourceUrl="http://localhost:18882/FcpsUserManagerService?xsd=xsd4" />
+    <MetadataFile FileName="FcpsUserManager.wsdl" MetadataType="Wsdl" ID="b118321d-3fa3-4d18-aaa8-170b4a73a365" SourceId="1" SourceUrl="http://localhost:18882/FcpsUserManagerService?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

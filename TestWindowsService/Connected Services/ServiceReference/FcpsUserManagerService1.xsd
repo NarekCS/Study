@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:18882/FcpsUserManagerService?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="FCPSRequestBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActionLogId" type="ser:guid" />
+      <xs:element minOccurs="0" name="StsUserFullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StsUserId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FCPSRequestBase" nillable="true" type="tns:FCPSRequestBase" />
+  <xs:complexType name="FCPSResponseBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResultCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FCPSResponseBase" nillable="true" type="tns:FCPSResponseBase" />
+</xs:schema>

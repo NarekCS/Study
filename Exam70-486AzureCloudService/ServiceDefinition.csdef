@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceDefinition name="Exam70_486AzureCloudService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" schemaVersion="2015-04.2.6">
+  <Startup>
+    <Task commandLine="Startup\ExecWithRetries.exe      
+        &quot;/c:Startup\AzureEnableWarmup.cmd&quot;   
+        /d:5000 /r:20 /rd:5000 &gt;&gt; c:\enablewarmup.cmd.log   
+        2&gt;&gt;&amp;1"
+          executionContext="elevated" taskType="background" />
+  </Startup>
+</ServiceDefinition>
+

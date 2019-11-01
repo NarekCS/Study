@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="FcpsUserManager" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:18882/FcpsUserManagerService?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:18882/FcpsUserManagerService?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/FCPS_Security.SharedFaultExceptions" />
+      <xsd:import schemaLocation="http://localhost:18882/FcpsUserManagerService?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:18882/FcpsUserManagerService?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DTO_UserManager.DOM_Requests" />
+      <xsd:import schemaLocation="http://localhost:18882/FcpsUserManagerService?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.BaseDto" />
+      <xsd:import schemaLocation="http://localhost:18882/FcpsUserManagerService?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.SharedEnums" />
+      <xsd:import schemaLocation="http://localhost:18882/FcpsUserManagerService?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/DOM_UserManager.DOM" />
+      <xsd:import schemaLocation="http://localhost:18882/FcpsUserManagerService?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/DTO_UserManager" />
+      <xsd:import schemaLocation="http://localhost:18882/FcpsUserManagerService?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/DB_API_STS.STSModel" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IFcpsUserManager_InsertNewFCMobileUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertNewFCMobileUser" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_InsertNewFCMobileUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertNewFCMobileUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_InsertNewFCMobileUser_FcpsDefaultFaultContractFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/FCPS_Security.SharedFaultExceptions" name="detail" element="q1:FcpsDefaultFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_ChangeFCMobileUserPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeFCMobileUserPassword" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_ChangeFCMobileUserPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeFCMobileUserPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_ChangeFCMobileUserPassword_FcpsDefaultFaultContractFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/FCPS_Security.SharedFaultExceptions" name="detail" element="q2:FcpsDefaultFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_ActivateFCMobileUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActivateFCMobileUser" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_ActivateFCMobileUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActivateFCMobileUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_ActivateFCMobileUser_FcpsDefaultFaultContractFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/FCPS_Security.SharedFaultExceptions" name="detail" element="q3:FcpsDefaultFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_ActivateActionRule_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActivateActionRule" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_ActivateActionRule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActivateActionRuleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_ActivateActionRule_FcpsDefaultFaultContractFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/FCPS_Security.SharedFaultExceptions" name="detail" element="q4:FcpsDefaultFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_ActivateUserRoleGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActivateUserRoleGroup" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_ActivateUserRoleGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActivateUserRoleGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_ActivateUserRoleGroup_FcpsDefaultFaultContractFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/FCPS_Security.SharedFaultExceptions" name="detail" element="q5:FcpsDefaultFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_AddRoleToRoleGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRoleToRoleGroup" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_AddRoleToRoleGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRoleToRoleGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_AddRoleToRoleGroup_FcpsDefaultFaultContractFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/FCPS_Security.SharedFaultExceptions" name="detail" element="q6:FcpsDefaultFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_AddUserToRoleGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserToRoleGroup" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_AddUserToRoleGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserToRoleGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_AddUserToRoleGroup_FcpsDefaultFaultContractFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/FCPS_Security.SharedFaultExceptions" name="detail" element="q7:FcpsDefaultFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_AssignActionToRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssignActionToRole" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_AssignActionToRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssignActionToRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_AssignActionToRole_FcpsDefaultFaultContractFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/FCPS_Security.SharedFaultExceptions" name="detail" element="q8:FcpsDefaultFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_GetRoleGroupById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleGroupById" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_GetRoleGroupById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleGroupByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_GetRoleGroupById_FcpsDefaultFaultContractFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/FCPS_Security.SharedFaultExceptions" name="detail" element="q9:FcpsDefaultFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_CreateRoleGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateRoleGroup" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_CreateRoleGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateRoleGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_CreateRoleGroup_FcpsDefaultFaultContractFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/FCPS_Security.SharedFaultExceptions" name="detail" element="q10:FcpsDefaultFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_GetRoleById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleById" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_GetRoleById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_GetRoleById_FcpsDefaultFaultContractFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/FCPS_Security.SharedFaultExceptions" name="detail" element="q11:FcpsDefaultFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_CreateRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateRole" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_CreateRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_CreateRole_FcpsDefaultFaultContractFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/FCPS_Security.SharedFaultExceptions" name="detail" element="q12:FcpsDefaultFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_DeleteRoleGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRoleGroup" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_DeleteRoleGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRoleGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_DeleteRoleGroup_FcpsDefaultFaultContractFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/FCPS_Security.SharedFaultExceptions" name="detail" element="q13:FcpsDefaultFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_DeleteRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRole" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_DeleteRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_DeleteRole_FcpsDefaultFaultContractFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/FCPS_Security.SharedFaultExceptions" name="detail" element="q14:FcpsDefaultFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_DisactivateActionRule_InputMessage">
+    <wsdl:part name="parameters" element="tns:DisactivateActionRule" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_DisactivateActionRule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DisactivateActionRuleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_DisactivateActionRule_FcpsDefaultFaultContractFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/FCPS_Security.SharedFaultExceptions" name="detail" element="q15:FcpsDefaultFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_DisactivateUserRoleGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:DisactivateUserRoleGroup" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_DisactivateUserRoleGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DisactivateUserRoleGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_DisactivateUserRoleGroup_FcpsDefaultFaultContractFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/FCPS_Security.SharedFaultExceptions" name="detail" element="q16:FcpsDefaultFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_EditRoleGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditRoleGroup" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_EditRoleGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditRoleGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_EditRoleGroup_FcpsDefaultFaultContractFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://schemas.datacontract.org/2004/07/FCPS_Security.SharedFaultExceptions" name="detail" element="q17:FcpsDefaultFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_EditRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditRole" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_EditRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_EditRole_FcpsDefaultFaultContractFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://schemas.datacontract.org/2004/07/FCPS_Security.SharedFaultExceptions" name="detail" element="q18:FcpsDefaultFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_RemoveRoleFromRoleGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveRoleFromRoleGroup" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_RemoveRoleFromRoleGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveRoleFromRoleGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_RemoveRoleFromRoleGroup_FcpsDefaultFaultContractFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://schemas.datacontract.org/2004/07/FCPS_Security.SharedFaultExceptions" name="detail" element="q19:FcpsDefaultFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_RemoveUserFromRoleGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveUserFromRoleGroup" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_RemoveUserFromRoleGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveUserFromRoleGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_RemoveUserFromRoleGroup_FcpsDefaultFaultContractFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://schemas.datacontract.org/2004/07/FCPS_Security.SharedFaultExceptions" name="detail" element="q20:FcpsDefaultFaultContract" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_CreateNewKioskUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewKioskUser" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_CreateNewKioskUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewKioskUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFcpsUserManager_CreateNewKioskUser_FcpsDefaultFaultContractFault_FaultMessage">
+    <wsdl:part xmlns:q21="http://schemas.datacontract.org/2004/07/FCPS_Security.SharedFaultExceptions" name="detail" element="q21:FcpsDefaultFaultContract" />
+  </wsdl:message>
+  <wsdl:portType name="IFcpsUserManager">
+    <wsdl:operation name="InsertNewFCMobileUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFcpsUserManager/InsertNewFCMobileUser" message="tns:IFcpsUserManager_InsertNewFCMobileUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFcpsUserManager/InsertNewFCMobileUserResponse" message="tns:IFcpsUserManager_InsertNewFCMobileUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IFcpsUserManager/InsertNewFCMobileUserFcpsDefaultFaultContractFault" name="FcpsDefaultFaultContractFault" message="tns:IFcpsUserManager_InsertNewFCMobileUser_FcpsDefaultFaultContractFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeFCMobileUserPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFcpsUserManager/ChangeFCMobileUserPassword" message="tns:IFcpsUserManager_ChangeFCMobileUserPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFcpsUserManager/ChangeFCMobileUserPasswordResponse" message="tns:IFcpsUserManager_ChangeFCMobileUserPassword_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IFcpsUserManager/ChangeFCMobileUserPasswordFcpsDefaultFaultContractFault" name="FcpsDefaultFaultContractFault" message="tns:IFcpsUserManager_ChangeFCMobileUserPassword_FcpsDefaultFaultContractFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivateFCMobileUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFcpsUserManager/ActivateFCMobileUser" message="tns:IFcpsUserManager_ActivateFCMobileUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFcpsUserManager/ActivateFCMobileUserResponse" message="tns:IFcpsUserManager_ActivateFCMobileUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IFcpsUserManager/ActivateFCMobileUserFcpsDefaultFaultContractFault" name="FcpsDefaultFaultContractFault" message="tns:IFcpsUserManager_ActivateFCMobileUser_FcpsDefaultFaultContractFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivateActionRule">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFcpsUserManager/ActivateActionRule" message="tns:IFcpsUserManager_ActivateActionRule_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFcpsUserManager/ActivateActionRuleResponse" message="tns:IFcpsUserManager_ActivateActionRule_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IFcpsUserManager/ActivateActionRuleFcpsDefaultFaultContractFault" name="FcpsDefaultFaultContractFault" message="tns:IFcpsUserManager_ActivateActionRule_FcpsDefaultFaultContractFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivateUserRoleGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFcpsUserManager/ActivateUserRoleGroup" message="tns:IFcpsUserManager_ActivateUserRoleGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFcpsUserManager/ActivateUserRoleGroupResponse" message="tns:IFcpsUserManager_ActivateUserRoleGroup_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IFcpsUserManager/ActivateUserRoleGroupFcpsDefaultFaultContractFault" name="FcpsDefaultFaultContractFault" message="tns:IFcpsUserManager_ActivateUserRoleGroup_FcpsDefaultFaultContractFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRoleToRoleGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFcpsUserManager/AddRoleToRoleGroup" message="tns:IFcpsUserManager_AddRoleToRoleGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFcpsUserManager/AddRoleToRoleGroupResponse" message="tns:IFcpsUserManager_AddRoleToRoleGroup_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IFcpsUserManager/AddRoleToRoleGroupFcpsDefaultFaultContractFault" name="FcpsDefaultFaultContractFault" message="tns:IFcpsUserManager_AddRoleToRoleGroup_FcpsDefaultFaultContractFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUserToRoleGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFcpsUserManager/AddUserToRoleGroup" message="tns:IFcpsUserManager_AddUserToRoleGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFcpsUserManager/AddUserToRoleGroupResponse" message="tns:IFcpsUserManager_AddUserToRoleGroup_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IFcpsUserManager/AddUserToRoleGroupFcpsDefaultFaultContractFault" name="FcpsDefaultFaultContractFault" message="tns:IFcpsUserManager_AddUserToRoleGroup_FcpsDefaultFaultContractFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AssignActionToRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFcpsUserManager/AssignActionToRole" message="tns:IFcpsUserManager_AssignActionToRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFcpsUserManager/AssignActionToRoleResponse" message="tns:IFcpsUserManager_AssignActionToRole_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IFcpsUserManager/AssignActionToRoleFcpsDefaultFaultContractFault" name="FcpsDefaultFaultContractFault" message="tns:IFcpsUserManager_AssignActionToRole_FcpsDefaultFaultContractFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleGroupById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFcpsUserManager/GetRoleGroupById" message="tns:IFcpsUserManager_GetRoleGroupById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFcpsUserManager/GetRoleGroupByIdResponse" message="tns:IFcpsUserManager_GetRoleGroupById_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IFcpsUserManager/GetRoleGroupByIdFcpsDefaultFaultContractFault" name="FcpsDefaultFaultContractFault" message="tns:IFcpsUserManager_GetRoleGroupById_FcpsDefaultFaultContractFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateRoleGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFcpsUserManager/CreateRoleGroup" message="tns:IFcpsUserManager_CreateRoleGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFcpsUserManager/CreateRoleGroupResponse" message="tns:IFcpsUserManager_CreateRoleGroup_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IFcpsUserManager/CreateRoleGroupFcpsDefaultFaultContractFault" name="FcpsDefaultFaultContractFault" message="tns:IFcpsUserManager_CreateRoleGroup_FcpsDefaultFaultContractFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFcpsUserManager/GetRoleById" message="tns:IFcpsUserManager_GetRoleById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFcpsUserManager/GetRoleByIdResponse" message="tns:IFcpsUserManager_GetRoleById_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IFcpsUserManager/GetRoleByIdFcpsDefaultFaultContractFault" name="FcpsDefaultFaultContractFault" message="tns:IFcpsUserManager_GetRoleById_FcpsDefaultFaultContractFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFcpsUserManager/CreateRole" message="tns:IFcpsUserManager_CreateRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFcpsUserManager/CreateRoleResponse" message="tns:IFcpsUserManager_CreateRole_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IFcpsUserManager/CreateRoleFcpsDefaultFaultContractFault" name="FcpsDefaultFaultContractFault" message="tns:IFcpsUserManager_CreateRole_FcpsDefaultFaultContractFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRoleGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFcpsUserManager/DeleteRoleGroup" message="tns:IFcpsUserManager_DeleteRoleGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFcpsUserManager/DeleteRoleGroupResponse" message="tns:IFcpsUserManager_DeleteRoleGroup_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IFcpsUserManager/DeleteRoleGroupFcpsDefaultFaultContractFault" name="FcpsDefaultFaultContractFault" message="tns:IFcpsUserManager_DeleteRoleGroup_FcpsDefaultFaultContractFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFcpsUserManager/DeleteRole" message="tns:IFcpsUserManager_DeleteRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFcpsUserManager/DeleteRoleResponse" message="tns:IFcpsUserManager_DeleteRole_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IFcpsUserManager/DeleteRoleFcpsDefaultFaultContractFault" name="FcpsDefaultFaultContractFault" message="tns:IFcpsUserManager_DeleteRole_FcpsDefaultFaultContractFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DisactivateActionRule">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFcpsUserManager/DisactivateActionRule" message="tns:IFcpsUserManager_DisactivateActionRule_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFcpsUserManager/DisactivateActionRuleResponse" message="tns:IFcpsUserManager_DisactivateActionRule_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IFcpsUserManager/DisactivateActionRuleFcpsDefaultFaultContractFault" name="FcpsDefaultFaultContractFault" message="tns:IFcpsUserManager_DisactivateActionRule_FcpsDefaultFaultContractFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DisactivateUserRoleGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFcpsUserManager/DisactivateUserRoleGroup" message="tns:IFcpsUserManager_DisactivateUserRoleGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFcpsUserManager/DisactivateUserRoleGroupResponse" message="tns:IFcpsUserManager_DisactivateUserRoleGroup_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IFcpsUserManager/DisactivateUserRoleGroupFcpsDefaultFaultContractFault" name="FcpsDefaultFaultContractFault" message="tns:IFcpsUserManager_DisactivateUserRoleGroup_FcpsDefaultFaultContractFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditRoleGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFcpsUserManager/EditRoleGroup" message="tns:IFcpsUserManager_EditRoleGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFcpsUserManager/EditRoleGroupResponse" message="tns:IFcpsUserManager_EditRoleGroup_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IFcpsUserManager/EditRoleGroupFcpsDefaultFaultContractFault" name="FcpsDefaultFaultContractFault" message="tns:IFcpsUserManager_EditRoleGroup_FcpsDefaultFaultContractFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFcpsUserManager/EditRole" message="tns:IFcpsUserManager_EditRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFcpsUserManager/EditRoleResponse" message="tns:IFcpsUserManager_EditRole_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IFcpsUserManager/EditRoleFcpsDefaultFaultContractFault" name="FcpsDefaultFaultContractFault" message="tns:IFcpsUserManager_EditRole_FcpsDefaultFaultContractFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveRoleFromRoleGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFcpsUserManager/RemoveRoleFromRoleGroup" message="tns:IFcpsUserManager_RemoveRoleFromRoleGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFcpsUserManager/RemoveRoleFromRoleGroupResponse" message="tns:IFcpsUserManager_RemoveRoleFromRoleGroup_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IFcpsUserManager/RemoveRoleFromRoleGroupFcpsDefaultFaultContractFault" name="FcpsDefaultFaultContractFault" message="tns:IFcpsUserManager_RemoveRoleFromRoleGroup_FcpsDefaultFaultContractFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUserFromRoleGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFcpsUserManager/RemoveUserFromRoleGroup" message="tns:IFcpsUserManager_RemoveUserFromRoleGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFcpsUserManager/RemoveUserFromRoleGroupResponse" message="tns:IFcpsUserManager_RemoveUserFromRoleGroup_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IFcpsUserManager/RemoveUserFromRoleGroupFcpsDefaultFaultContractFault" name="FcpsDefaultFaultContractFault" message="tns:IFcpsUserManager_RemoveUserFromRoleGroup_FcpsDefaultFaultContractFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewKioskUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFcpsUserManager/CreateNewKioskUser" message="tns:IFcpsUserManager_CreateNewKioskUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFcpsUserManager/CreateNewKioskUserResponse" message="tns:IFcpsUserManager_CreateNewKioskUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IFcpsUserManager/CreateNewKioskUserFcpsDefaultFaultContractFault" name="FcpsDefaultFaultContractFault" message="tns:IFcpsUserManager_CreateNewKioskUser_FcpsDefaultFaultContractFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IFcpsUserManager" type="tns:IFcpsUserManager">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertNewFCMobileUser">
+      <soap:operation soapAction="http://tempuri.org/IFcpsUserManager/InsertNewFCMobileUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FcpsDefaultFaultContractFault">
+        <soap:fault use="literal" name="FcpsDefaultFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeFCMobileUserPassword">
+      <soap:operation soapAction="http://tempuri.org/IFcpsUserManager/ChangeFCMobileUserPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FcpsDefaultFaultContractFault">
+        <soap:fault use="literal" name="FcpsDefaultFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateFCMobileUser">
+      <soap:operation soapAction="http://tempuri.org/IFcpsUserManager/ActivateFCMobileUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FcpsDefaultFaultContractFault">
+        <soap:fault use="literal" name="FcpsDefaultFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateActionRule">
+      <soap:operation soapAction="http://tempuri.org/IFcpsUserManager/ActivateActionRule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FcpsDefaultFaultContractFault">
+        <soap:fault use="literal" name="FcpsDefaultFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateUserRoleGroup">
+      <soap:operation soapAction="http://tempuri.org/IFcpsUserManager/ActivateUserRoleGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FcpsDefaultFaultContractFault">
+        <soap:fault use="literal" name="FcpsDefaultFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddRoleToRoleGroup">
+      <soap:operation soapAction="http://tempuri.org/IFcpsUserManager/AddRoleToRoleGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FcpsDefaultFaultContractFault">
+        <soap:fault use="literal" name="FcpsDefaultFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserToRoleGroup">
+      <soap:operation soapAction="http://tempuri.org/IFcpsUserManager/AddUserToRoleGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FcpsDefaultFaultContractFault">
+        <soap:fault use="literal" name="FcpsDefaultFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AssignActionToRole">
+      <soap:operation soapAction="http://tempuri.org/IFcpsUserManager/AssignActionToRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FcpsDefaultFaultContractFault">
+        <soap:fault use="literal" name="FcpsDefaultFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleGroupById">
+      <soap:operation soapAction="http://tempuri.org/IFcpsUserManager/GetRoleGroupById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FcpsDefaultFaultContractFault">
+        <soap:fault use="literal" name="FcpsDefaultFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateRoleGroup">
+      <soap:operation soapAction="http://tempuri.org/IFcpsUserManager/CreateRoleGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FcpsDefaultFaultContractFault">
+        <soap:fault use="literal" name="FcpsDefaultFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleById">
+      <soap:operation soapAction="http://tempuri.org/IFcpsUserManager/GetRoleById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FcpsDefaultFaultContractFault">
+        <soap:fault use="literal" name="FcpsDefaultFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateRole">
+      <soap:operation soapAction="http://tempuri.org/IFcpsUserManager/CreateRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FcpsDefaultFaultContractFault">
+        <soap:fault use="literal" name="FcpsDefaultFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRoleGroup">
+      <soap:operation soapAction="http://tempuri.org/IFcpsUserManager/DeleteRoleGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FcpsDefaultFaultContractFault">
+        <soap:fault use="literal" name="FcpsDefaultFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRole">
+      <soap:operation soapAction="http://tempuri.org/IFcpsUserManager/DeleteRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FcpsDefaultFaultContractFault">
+        <soap:fault use="literal" name="FcpsDefaultFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DisactivateActionRule">
+      <soap:operation soapAction="http://tempuri.org/IFcpsUserManager/DisactivateActionRule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FcpsDefaultFaultContractFault">
+        <soap:fault use="literal" name="FcpsDefaultFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DisactivateUserRoleGroup">
+      <soap:operation soapAction="http://tempuri.org/IFcpsUserManager/DisactivateUserRoleGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FcpsDefaultFaultContractFault">
+        <soap:fault use="literal" name="FcpsDefaultFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="EditRoleGroup">
+      <soap:operation soapAction="http://tempuri.org/IFcpsUserManager/EditRoleGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FcpsDefaultFaultContractFault">
+        <soap:fault use="literal" name="FcpsDefaultFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="EditRole">
+      <soap:operation soapAction="http://tempuri.org/IFcpsUserManager/EditRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FcpsDefaultFaultContractFault">
+        <soap:fault use="literal" name="FcpsDefaultFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveRoleFromRoleGroup">
+      <soap:operation soapAction="http://tempuri.org/IFcpsUserManager/RemoveRoleFromRoleGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FcpsDefaultFaultContractFault">
+        <soap:fault use="literal" name="FcpsDefaultFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUserFromRoleGroup">
+      <soap:operation soapAction="http://tempuri.org/IFcpsUserManager/RemoveUserFromRoleGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FcpsDefaultFaultContractFault">
+        <soap:fault use="literal" name="FcpsDefaultFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewKioskUser">
+      <soap:operation soapAction="http://tempuri.org/IFcpsUserManager/CreateNewKioskUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="FcpsDefaultFaultContractFault">
+        <soap:fault use="literal" name="FcpsDefaultFaultContractFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FcpsUserManager">
+    <wsdl:port name="BasicHttpBinding_IFcpsUserManager" binding="tns:BasicHttpBinding_IFcpsUserManager">
+      <soap:address location="http://localhost:18882/FcpsUserManagerService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

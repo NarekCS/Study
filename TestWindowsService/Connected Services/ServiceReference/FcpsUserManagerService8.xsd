@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.SharedEnums" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FCPS_Shared_DTO.SharedEnums" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="STS_Caller_OriginTypeId">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UNKNOWN" />
+      <xs:enumeration value="Kiosk" />
+      <xs:enumeration value="AdminWeb" />
+      <xs:enumeration value="ExternalWeb" />
+      <xs:enumeration value="ProcessingWeb" />
+      <xs:enumeration value="PaymentWeb" />
+      <xs:enumeration value="MerchantCabinet" />
+      <xs:enumeration value="PublicService" />
+      <xs:enumeration value="AdminService" />
+      <xs:enumeration value="KioskMiddleService" />
+      <xs:enumeration value="MobileAppClients" />
+      <xs:enumeration value="MobileAppWebService" />
+      <xs:enumeration value="KioskInstaller" />
+      <xs:enumeration value="Wallet" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="STS_Caller_OriginTypeId" nillable="true" type="tns:STS_Caller_OriginTypeId" />
+</xs:schema>

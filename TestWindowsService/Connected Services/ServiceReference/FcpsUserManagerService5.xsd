@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/DTO_UserManager" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DTO_UserManager" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ActivateActionRuleDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActionId" type="xs:int" />
+      <xs:element minOccurs="0" name="RoleId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ActivateActionRuleDC" nillable="true" type="tns:ActivateActionRuleDC" />
+  <xs:complexType name="ActivateUserRoleGroupDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RoleGroupId" type="xs:int" />
+      <xs:element minOccurs="0" name="UserId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ActivateUserRoleGroupDC" nillable="true" type="tns:ActivateUserRoleGroupDC" />
+  <xs:complexType name="AddRoleToRoleGroupDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RoleGroupId" type="xs:int" />
+      <xs:element minOccurs="0" name="RoleId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddRoleToRoleGroupDC" nillable="true" type="tns:AddRoleToRoleGroupDC" />
+  <xs:complexType name="AddUserToRoleGroupDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatorUserId" type="xs:int" />
+      <xs:element minOccurs="0" name="RoleGroupId" type="xs:int" />
+      <xs:element minOccurs="0" name="UserId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddUserToRoleGroupDC" nillable="true" type="tns:AddUserToRoleGroupDC" />
+  <xs:complexType name="AssignActionToRoleDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActionId" type="xs:int" />
+      <xs:element minOccurs="0" name="CreatorUserId" type="xs:int" />
+      <xs:element minOccurs="0" name="RoleId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AssignActionToRoleDC" nillable="true" type="tns:AssignActionToRoleDC" />
+  <xs:complexType name="GetRoleGroupByIdDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RoleGroupId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetRoleGroupByIdDC" nillable="true" type="tns:GetRoleGroupByIdDC" />
+  <xs:complexType name="CreateRoleGroupDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RoleGroupName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateRoleGroupDC" nillable="true" type="tns:CreateRoleGroupDC" />
+  <xs:complexType name="GetRoleByIdDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RoleId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetRoleByIdDC" nillable="true" type="tns:GetRoleByIdDC" />
+  <xs:complexType name="CreateRoleDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatorUserId" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoleName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateRoleDC" nillable="true" type="tns:CreateRoleDC" />
+  <xs:complexType name="DeleteRoleGroupDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RoleGroupId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeleteRoleGroupDC" nillable="true" type="tns:DeleteRoleGroupDC" />
+  <xs:complexType name="DeleteRoleDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RoleId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeleteRoleDC" nillable="true" type="tns:DeleteRoleDC" />
+  <xs:complexType name="DisactivateActionRuleDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActionId" type="xs:int" />
+      <xs:element minOccurs="0" name="RoleId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DisactivateActionRuleDC" nillable="true" type="tns:DisactivateActionRuleDC" />
+  <xs:complexType name="DisactivateUserRoleGroupDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RoleGroupId" type="xs:int" />
+      <xs:element minOccurs="0" name="UserId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DisactivateUserRoleGroupDC" nillable="true" type="tns:DisactivateUserRoleGroupDC" />
+  <xs:complexType name="EditRoleGroupDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RoleGroupId" type="xs:int" />
+      <xs:element minOccurs="0" name="RoleGroupName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EditRoleGroupDC" nillable="true" type="tns:EditRoleGroupDC" />
+  <xs:complexType name="EditRoleDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RoleId" type="xs:int" />
+      <xs:element minOccurs="0" name="RoleName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EditRoleDC" nillable="true" type="tns:EditRoleDC" />
+  <xs:complexType name="RemoveRoleFromRoleGroupDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RoleGroupId" type="xs:int" />
+      <xs:element minOccurs="0" name="RoleId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RemoveRoleFromRoleGroupDC" nillable="true" type="tns:RemoveRoleFromRoleGroupDC" />
+  <xs:complexType name="RemoveUserFromRoleGroupDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RoleGroupId" type="xs:int" />
+      <xs:element minOccurs="0" name="UserId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RemoveUserFromRoleGroupDC" nillable="true" type="tns:RemoveUserFromRoleGroupDC" />
+</xs:schema>
