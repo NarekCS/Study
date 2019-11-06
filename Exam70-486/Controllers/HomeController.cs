@@ -14,8 +14,9 @@ using Microsoft.AspNetCore.Mvc.ViewEngines;
 namespace Exam70_486.Controllers
 {
     //[ResultFilter]
+   
     public class HomeController : Controller
-    {
+    {        
         private readonly ILogger<HomeController> _logger;
         //IViewEngine
 

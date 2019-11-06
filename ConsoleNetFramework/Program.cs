@@ -16,6 +16,7 @@ using System.Runtime.CompilerServices;
 using System.Threading;
 using System.IO;
 using System.Runtime.Remoting.Messaging;
+using System.Diagnostics.Contracts;
 
 namespace ConsoleNetFramework
 {
@@ -92,8 +93,7 @@ namespace ConsoleNetFramework
         }
        
         static void Main(string[] args)
-        {
-            
+        {           
             //TypeInfo
 
             //Activator.CreateInstance()

@@ -157,7 +157,11 @@ namespace TestingConsole
         public string Name { get; set; }
         public object Person { get; set; }
     }
-
+    enum Roles
+    {
+        Admin,
+        Manager
+    }
     partial class Program
     {
         private static void ComparingAGenericTypeVariableWithNull<T>(T obj) { if (obj == null) { /* Never executes for a value type */ } }
@@ -294,11 +298,15 @@ namespace TestingConsole
         }
         // [HandleProcessCorruptedStateExceptions]
         // [SecurityCritical]
+
         static void Main(string[] args)
         {
-            decimal? d = 10;
-            decimal d1 = d.GetValueOrDefault();
-            Console.WriteLine(d1);
+            int i = args.Length;
+            Contract.Requires(args.Length > 0);
+            TextWriterTraceListener textWriterTraceListener = new TextWriterTraceListener(Console.Out);
+            Trace.Listeners.Add(textWriterTraceListener);
+            Trace.WriteLine("sgsh");
+           
             //Task.FromResult(0);
             //NewMEF newMEF = new NewMEF();
             //newMEF.Send("hdhhhgh");
@@ -346,7 +354,7 @@ namespace TestingConsole
             //}
 
 
-            #region First20Chapters
+#region First20Chapters
 
             //Contract.Requires(true);
 
@@ -617,7 +625,7 @@ namespace TestingConsole
             //    M(value);
             //}
 
-            #endregion
+#endregion
         }
 
         private static void M(Int32 n) { Console.WriteLine("M(Int32): " + n); }

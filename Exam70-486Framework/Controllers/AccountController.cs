@@ -11,12 +11,14 @@ using Microsoft.Owin.Security;
 using Exam70_486Framework.Models;
 using Microsoft.WindowsAzure.ServiceRuntime;
 
+
 namespace Exam70_486Framework.Controllers
 {
-    [ActionFilter]  
+   // [ActionFilter]  
     [Authorize]
+    [HandleError]
     public class AccountController : Controller
-    {
+    {        
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
@@ -67,8 +69,7 @@ namespace Exam70_486Framework.Controllers
         //[AcceptVerbs(HttpVerbs.Get)]
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
-        {
-            VirtualPathProviderViewEngine
+        {            
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
