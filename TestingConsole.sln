@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.852
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29503.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestingConsole", "TestingConsole\TestingConsole.csproj", "{E41E8789-9750-479E-9607-420FE0D53618}"
 EndProject
@@ -41,10 +41,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrishDLL", "UrishDLL\UrishD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DLLgeneratorFramework", "DLLgeneratorFramework\DLLgeneratorFramework.csproj", "{3D35F130-5082-4615-B3CE-0F152DA5E501}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exam70-486.Test", "Exam70-486.Test\Exam70-486.Test.csproj", "{B13E4F2E-B69F-4610-A30A-7721532A3C03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject", "UnitTestProject\UnitTestProject.csproj", "{B398D0FC-C705-4882-823A-9818FD53FF09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAndLoadTestProject", "WebAndLoadTestProject\WebAndLoadTestProject.csproj", "{A747E07B-FE3D-433E-B57F-0A1990016EA7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2B9531AC-0932-4B68-B628-817FD8B45F55}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+	EndProjectSection
+EndProject
 Global
-	GlobalSection(Performance) = preSolution
-		HasPerformanceSessions = true
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -126,11 +134,26 @@ Global
 		{3D35F130-5082-4615-B3CE-0F152DA5E501}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D35F130-5082-4615-B3CE-0F152DA5E501}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D35F130-5082-4615-B3CE-0F152DA5E501}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B13E4F2E-B69F-4610-A30A-7721532A3C03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B13E4F2E-B69F-4610-A30A-7721532A3C03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B13E4F2E-B69F-4610-A30A-7721532A3C03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B13E4F2E-B69F-4610-A30A-7721532A3C03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B398D0FC-C705-4882-823A-9818FD53FF09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B398D0FC-C705-4882-823A-9818FD53FF09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B398D0FC-C705-4882-823A-9818FD53FF09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B398D0FC-C705-4882-823A-9818FD53FF09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A747E07B-FE3D-433E-B57F-0A1990016EA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A747E07B-FE3D-433E-B57F-0A1990016EA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A747E07B-FE3D-433E-B57F-0A1990016EA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A747E07B-FE3D-433E-B57F-0A1990016EA7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7DADBD85-9618-4324-AD2B-ED7CF06A1191}
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
 	EndGlobalSection
 EndGlobal

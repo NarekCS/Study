@@ -25,7 +25,7 @@ namespace Exam70_486.Controllers
             //IControllerFactory
             _logger = logger; //RoleEntryPoint
         }
-        [MiddlewareFilter(typeof(String))]
+       // [MiddlewareFilter(typeof(String))]
         public IActionResult Index()
         {
             return View();

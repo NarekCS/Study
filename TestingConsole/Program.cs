@@ -32,13 +32,35 @@ using System.Numerics;
 using System.Security.Policy;
 using Samples;
 using System.Threading.Tasks;
+using System.Net.Http;
 
 [assembly: InternalsVisibleTo("mscorelib")]
 namespace TestingConsole
-{
-    interface Itrtt
+{  
+    interface ITrtt
+    {     
+        interface IYgui
+        {
+           static int Age { get; set; }
+          //int Some { get; set; }
+        }
+        class A
+        {
+            public static int Something { get; set; } 
+        }
+        int Name { get; set; }
+    }
+    public class SomeClass : ITrtt
     {
-        
+        public int Name { get => ITrtt.IYgui.Age; set => _ = ITrtt.A.Something; }
+    }
+    class SClass : ITrtt.IYgui 
+    {
+        public SClass()
+        {
+            
+        }
+        // public int Some { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
     abstract class D
     {
@@ -274,7 +296,7 @@ namespace TestingConsole
             fixed (Byte* pbytes = bytes)
             {
                 originalMemoryAddress = (IntPtr)pbytes;
-               
+
             }
             GC.Collect();
 
@@ -301,12 +323,22 @@ namespace TestingConsole
 
         static void Main(string[] args)
         {
-            int i = args.Length;
-            Contract.Requires(args.Length > 0);
-            TextWriterTraceListener textWriterTraceListener = new TextWriterTraceListener(Console.Out);
-            Trace.Listeners.Add(textWriterTraceListener);
-            Trace.WriteLine("sgsh");
-           
+            HttpClientHandler clientHandler = new HttpClientHandler();
+            clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
+            HttpClient client = new HttpClient();
+            
+            StringContent content = new StringContent("{\"jsonrpc\": \"2.0\",\"method\":\"company\",\"id\": 32123,\"params\": {\"merchant\": \"20537807697644\",\"cashier\": 14999,\"token\": \"76AADD784FF1979A27FCD23EF7837C06\",\"place\": null}}");
+            var result = client.PostAsync("http://alpha-profile.cl.world/api/jsonrpc/v1", content).Result;
+            if (result.IsSuccessStatusCode)
+            {
+
+            }
+            //int i = args.Length;
+            //Contract.Requires(args.Length > 0);
+            //TextWriterTraceListener textWriterTraceListener = new TextWriterTraceListener(Console.Out);
+            //Trace.Listeners.Add(textWriterTraceListener);
+            //Trace.WriteLine("sgsh");
+
             //Task.FromResult(0);
             //NewMEF newMEF = new NewMEF();
             //newMEF.Send("hdhhhgh");
@@ -354,7 +386,7 @@ namespace TestingConsole
             //}
 
 
-#region First20Chapters
+            #region First20Chapters
 
             //Contract.Requires(true);
 
@@ -625,7 +657,7 @@ namespace TestingConsole
             //    M(value);
             //}
 
-#endregion
+            #endregion
         }
 
         private static void M(Int32 n) { Console.WriteLine("M(Int32): " + n); }

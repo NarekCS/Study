@@ -37,6 +37,7 @@ namespace Exam70_486
             services.AddControllersWithViews();
             services.AddRazorPages();
             services.AddLocalization();
+            services.AddHealthChecks();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -61,12 +62,13 @@ namespace Exam70_486
             app.UseStaticFiles();
 
             app.UseRouting();
-
+           
             app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
-            {                
+            {
+                endpoints.MapHealthChecks("/health");
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
