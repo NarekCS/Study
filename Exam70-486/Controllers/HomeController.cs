@@ -10,6 +10,9 @@ using Microsoft.AspNetCore.Mvc.Filters;
 using System.IO;
 using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.AspNetCore.Mvc.ViewEngines;
+using Microsoft.Extensions.Localization;
+using System.Threading;
+using System.Security.Principal;
 
 namespace Exam70_486.Controllers
 {
@@ -28,6 +31,9 @@ namespace Exam70_486.Controllers
        // [MiddlewareFilter(typeof(String))]
         public IActionResult Index()
         {
+           // var w = WindowsIdentity;
+            Thread.CurrentPrincipal = User;
+            var v = HttpContext.User;
             return View();
         }
       

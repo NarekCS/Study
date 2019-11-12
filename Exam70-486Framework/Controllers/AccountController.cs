@@ -10,7 +10,8 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Exam70_486Framework.Models;
 using Microsoft.WindowsAzure.ServiceRuntime;
-
+using System.Threading;
+using System.Security.Principal;
 
 namespace Exam70_486Framework.Controllers
 {
@@ -69,7 +70,10 @@ namespace Exam70_486Framework.Controllers
         //[AcceptVerbs(HttpVerbs.Get)]
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
-        {            
+        {
+           // WindowsIdentity
+            Thread.CurrentPrincipal = User;
+            var v = HttpContext.User;
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }

@@ -62,6 +62,7 @@
     <Fakes Include="Fakes\Exam70-486Framework.fakes" />
     <Fakes Include="Fakes\System.fakes" />
     <Fakes Include="Fakes\mscorlib.fakes" />
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
