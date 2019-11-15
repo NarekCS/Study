@@ -36,17 +36,17 @@ using System.Net.Http;
 
 [assembly: InternalsVisibleTo("mscorelib")]
 namespace TestingConsole
-{  
+{
     interface ITrtt
-    {     
+    {
         interface IYgui
         {
-           static int Age { get; set; }
-          //int Some { get; set; }
+            static int Age { get; set; }
+            //int Some { get; set; }
         }
         class A
         {
-            public static int Something { get; set; } 
+            public static int Something { get; set; }
         }
         int Name { get; set; }
     }
@@ -54,11 +54,11 @@ namespace TestingConsole
     {
         public int Name { get => ITrtt.IYgui.Age; set => _ = ITrtt.A.Something; }
     }
-    class SClass : ITrtt.IYgui 
+    class SClass : ITrtt.IYgui
     {
         public SClass()
         {
-            
+
         }
         // public int Some { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
@@ -323,16 +323,26 @@ namespace TestingConsole
 
         static void Main(string[] args)
         {
-            HttpClientHandler clientHandler = new HttpClientHandler();
-            clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
-            HttpClient client = new HttpClient();
-            
-            StringContent content = new StringContent("{\"jsonrpc\": \"2.0\",\"method\":\"company\",\"id\": 32123,\"params\": {\"merchant\": \"20537807697644\",\"cashier\": 14999,\"token\": \"76AADD784FF1979A27FCD23EF7837C06\",\"place\": null}}");
-            var result = client.PostAsync("http://alpha-profile.cl.world/api/jsonrpc/v1", content).Result;
-            if (result.IsSuccessStatusCode)
-            {
+            Dictionary<int, string> pairs = new Dictionary<int, string>();
+            pairs.Add(2010, "bmw");
+            pairs.Add(2012, "mers");
+            pairs.Add(2019, "toyota");
 
+            foreach (var item in pairs.Keys)
+            {
+                Console.WriteLine(pairs[item]);
             }
+            
+            //HttpClientHandler clientHandler = new HttpClientHandler();
+            //clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
+            //HttpClient client = new HttpClient();
+
+            //StringContent content = new StringContent("{\"jsonrpc\": \"2.0\",\"method\":\"company\",\"id\": 32123,\"params\": {\"merchant\": \"20537807697644\",\"cashier\": 14999,\"token\": \"76AADD784FF1979A27FCD23EF7837C06\",\"place\": null}}");
+            //var result = client.PostAsync("http://alpha-profile.cl.world/api/jsonrpc/v1", content).Result;
+            //if (result.IsSuccessStatusCode)
+            //{
+
+            //}
             //int i = args.Length;
             //Contract.Requires(args.Length > 0);
             //TextWriterTraceListener textWriterTraceListener = new TextWriterTraceListener(Console.Out);

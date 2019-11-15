@@ -36,6 +36,7 @@ namespace Exam70_486
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddAuthentication().AddGoogle();
             services.AddLocalization();
             services.AddHealthChecks();
         }
