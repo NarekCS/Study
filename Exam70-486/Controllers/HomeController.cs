@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Mvc.ViewEngines;
 using Microsoft.Extensions.Localization;
 using System.Threading;
 using System.Security.Principal;
+using System.Web.Security;
 
 namespace Exam70_486.Controllers
 {
@@ -31,7 +32,8 @@ namespace Exam70_486.Controllers
        // [MiddlewareFilter(typeof(String))]
         public IActionResult Index()
         {
-           // var w = WindowsIdentity;
+            // var w = WindowsIdentity;
+            //MembershipProvider
             Thread.CurrentPrincipal = User;
             var v = HttpContext.User;
             return View();

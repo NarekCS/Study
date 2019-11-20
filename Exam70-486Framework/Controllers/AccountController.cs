@@ -12,6 +12,7 @@ using Exam70_486Framework.Models;
 using Microsoft.WindowsAzure.ServiceRuntime;
 using System.Threading;
 using System.Security.Principal;
+using System.Web.Security;
 
 namespace Exam70_486Framework.Controllers
 {
@@ -72,6 +73,7 @@ namespace Exam70_486Framework.Controllers
         public ActionResult Login(string returnUrl)
         {
            // WindowsIdentity
+           //MembershipProvider
             Thread.CurrentPrincipal = User;
             var v = HttpContext.User;
             ViewBag.ReturnUrl = returnUrl;
@@ -84,7 +86,7 @@ namespace Exam70_486Framework.Controllers
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
-        {
+        {//WebSecurity
             if (!ModelState.IsValid)
             {
                 return View(model);
