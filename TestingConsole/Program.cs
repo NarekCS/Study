@@ -320,19 +320,186 @@ namespace TestingConsole
         }
         // [HandleProcessCorruptedStateExceptions]
         // [SecurityCritical]
+        public static int NumOffices(char[][] grid)
+        {
+            int result = 0;
+            List<Tuple<int, int, int>> list = new List<Tuple<int, int, int>>();
+            for (int i = 0; i < grid.Length; i++)
+            {
+                for (int j = 0; j < grid[0].Length; j++)
+                {
+                    int count = 0;
+                    if (grid[i][j] == '1')
+                    {
+                        count++;
+                    }
+                    else
+                    {
+                        if (count != 0)
+                        {
+                            list.Add(Tuple.Create(i, j - count, count));
+                            count = 0;
+                        }
+                    }
+                    if (j == grid[0].Length - 1 && count != 0)
+                    {
+                        list.Add(Tuple.Create(i, j - count, count));
+                    }
+                }
+            }
+
+            for (int i = 0; i < list.Count - 1; i++)
+            {
+                //if(list[i+1].Item1-list[i].Item1 && 
+            }
+            // place your code here
+
+            return result;
+        }
+
+
+        public static int MinimumConcat(string initial, string goal)
+        {
+            // Place your code here
+            int c = 0;
+            int k = initial.IndexOf(goal[0]);
+            for (int i = 1; i < goal.Length; i++)
+            {
+
+
+                if (initial.IndexOf(goal[i], k) < k)
+                {
+                    c++;
+
+                }
+
+                k = initial.IndexOf(goal[i]);
+                if (k == -1)
+                {
+                    return k;
+                }
+
+            }
+            return c + 1;
+        }
+
+        //int m = initial.Length;
+        //int n = goal.Length;
+        //if (m == 0)
+        //    return 1;
+        //if (n == 0)
+        //    return 0;
+
+        //// If last characters of two strings 
+        //// are matching 
+        //if (initial[m - 1] == str2[n - 1])
+        //    return isSubSequence(initial, str2,
+        //                            m - 1, n - 1);
+
+        //// If last characters are not matching 
+        //return isSubSequence(initial, initial, m, n - 1);
+
+
+
+
+
+        public static string EncryptString(string key, string plainText)
+        {
+            byte[] iv = new byte[16];
+            byte[] array;
+
+            using (Aes aes = Aes.Create())
+            {
+                aes.Key = Encoding.UTF8.GetBytes(key);
+                aes.IV = iv;
+
+                ICryptoTransform encryptor = aes.CreateEncryptor(aes.Key, aes.IV);
+
+                using (MemoryStream memoryStream = new MemoryStream())
+                {
+                    using (CryptoStream cryptoStream = new CryptoStream((Stream)memoryStream, encryptor, CryptoStreamMode.Write))
+                    {
+                        using (StreamWriter streamWriter = new StreamWriter((Stream)cryptoStream))
+                        {
+                            streamWriter.Write(plainText);
+                        }
+
+                        array = memoryStream.ToArray();
+                    }
+                }
+            }
+
+            return Convert.ToBase64String(array);
+        }
+
+        public static string DecryptString(string key, string cipherText)
+        {
+            byte[] iv = new byte[16];
+            byte[] buffer = Convert.FromBase64String(cipherText);
+
+            using (Aes aes = Aes.Create())
+            {
+                aes.Key = Encoding.UTF8.GetBytes(key);
+                aes.IV = iv;
+                ICryptoTransform decryptor = aes.CreateDecryptor(aes.Key, aes.IV);
+
+                using (MemoryStream memoryStream = new MemoryStream(buffer))
+                {
+                    using (CryptoStream cryptoStream = new CryptoStream((Stream)memoryStream, decryptor, CryptoStreamMode.Read))
+                    {
+                        using (StreamReader streamReader = new StreamReader((Stream)cryptoStream))
+                        {
+                            return streamReader.ReadToEnd();
+                        }
+                    }
+                }
+            }
+        }
+            
+
+
 
         static void Main(string[] args)
         {
-            Dictionary<int, string> pairs = new Dictionary<int, string>();
-            pairs.Add(2010, "bmw");
-            pairs.Add(2012, "mers");
-            pairs.Add(2019, "toyota");
+            string key = "$%RFVHDE&dege6wef&^6dfegf)&8:'!@";
+            string test = "Hello world";
 
-            foreach (var item in pairs.Keys)
-            {
-                Console.WriteLine(pairs[item]);
-            }
-            
+            Console.WriteLine(EncryptString(key, test));
+            Console.WriteLine(DecryptString(key, EncryptString(key, test)));
+
+           /* DateTime dateTime = DateTime.Now;
+            DateTime old = DateTime.Now.AddMinutes(-48);
+            var dif = dateTime - old;
+            Console.WriteLine(dif);
+            Console.WriteLine(dif.TotalHours);*/
+            //int t = MinimumConcat("kabkcdk", "abcbcabccdak");
+            //Console.WriteLine(t);
+            //SemaphoreSlim semaphoreSlim = new SemaphoreSlim(1, 1);
+            //Task.Run(async () =>
+            //{
+            //    await semaphoreSlim.WaitAsync();
+            //    Console.WriteLine("semaphore is taken from task 1");
+            //    await Task.Delay(10000);
+            //    semaphoreSlim.Release();
+            //    Console.WriteLine("semaphore released from task 1");
+            //});
+            //Thread.Sleep(1000);
+            //semaphoreSlim.WaitAsync();
+            //Console.WriteLine("semaphore is taken from task 2");
+            //semaphoreSlim.Release();
+            //Console.WriteLine("semaphore released from task 2");
+
+            //Console.ReadLine();
+            //Dictionary<int, string> pairs = new Dictionary<int, string>();
+            //pairs.Add(2010, "bmw");
+            //pairs.Add(2012, "mers");
+            //pairs.Add(2019, "toyota");
+
+            //foreach (var item in pairs.Keys)
+            //{
+            //    Console.WriteLine(pairs[item]);
+            //}
+
             //HttpClientHandler clientHandler = new HttpClientHandler();
             //clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
             //HttpClient client = new HttpClient();

@@ -13,6 +13,8 @@ using Microsoft.WindowsAzure.ServiceRuntime;
 using System.Threading;
 using System.Security.Principal;
 using System.Web.Security;
+using WebMatrix.WebData;
+using System.Configuration.Provider;
 
 namespace Exam70_486Framework.Controllers
 {
@@ -86,7 +88,10 @@ namespace Exam70_486Framework.Controllers
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
-        {//WebSecurity
+        {
+            //ProviderBase
+            //RoleProvider
+            //WebSecurity
             if (!ModelState.IsValid)
             {
                 return View(model);

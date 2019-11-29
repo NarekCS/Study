@@ -14,11 +14,12 @@ using Microsoft.Extensions.Localization;
 using System.Threading;
 using System.Security.Principal;
 using System.Web.Security;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Exam70_486.Controllers
 {
     //[ResultFilter]
-   
+   [Authorize]
     public class HomeController : Controller
     {        
         private readonly ILogger<HomeController> _logger;
@@ -41,6 +42,8 @@ namespace Exam70_486.Controllers
       
         public ActionResult Privacy()
         {
+            //ProviderBase
+            RoleProvider
             return new EmptyResult();
         }
 
