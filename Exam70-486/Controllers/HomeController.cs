@@ -33,6 +33,7 @@ namespace Exam70_486.Controllers
        // [MiddlewareFilter(typeof(String))]
         public IActionResult Index()
         {
+            
             // var w = WindowsIdentity;
             //MembershipProvider
             Thread.CurrentPrincipal = User;

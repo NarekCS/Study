@@ -33,6 +33,7 @@ using System.Security.Policy;
 using Samples;
 using System.Threading.Tasks;
 using System.Net.Http;
+using System.Net;
 
 [assembly: InternalsVisibleTo("mscorelib")]
 namespace TestingConsole
@@ -402,76 +403,32 @@ namespace TestingConsole
 
 
 
-
-        public static string EncryptString(string key, string plainText)
+        public static  async Task<IpInfo> GetInfo(string ip)
         {
-            byte[] iv = new byte[16];
-            byte[] array;
-
-            using (Aes aes = Aes.Create())
+            try
             {
-                aes.Key = Encoding.UTF8.GetBytes(key);
-                aes.IV = iv;
+                using var client = new HttpClient();
+                var response = await client.GetAsync("http://ipinfo.io/" + ip);
 
-                ICryptoTransform encryptor = aes.CreateEncryptor(aes.Key, aes.IV);
-
-                using (MemoryStream memoryStream = new MemoryStream())
-                {
-                    using (CryptoStream cryptoStream = new CryptoStream((Stream)memoryStream, encryptor, CryptoStreamMode.Write))
-                    {
-                        using (StreamWriter streamWriter = new StreamWriter((Stream)cryptoStream))
-                        {
-                            streamWriter.Write(plainText);
-                        }
-
-                        array = memoryStream.ToArray();
-                    }
-                }
+                return JsonConvert.DeserializeObject<IpInfo>(await response.Content.ReadAsStringAsync());
             }
-
-            return Convert.ToBase64String(array);
-        }
-
-        public static string DecryptString(string key, string cipherText)
-        {
-            byte[] iv = new byte[16];
-            byte[] buffer = Convert.FromBase64String(cipherText);
-
-            using (Aes aes = Aes.Create())
+            catch (Exception ex)
             {
-                aes.Key = Encoding.UTF8.GetBytes(key);
-                aes.IV = iv;
-                ICryptoTransform decryptor = aes.CreateDecryptor(aes.Key, aes.IV);
-
-                using (MemoryStream memoryStream = new MemoryStream(buffer))
-                {
-                    using (CryptoStream cryptoStream = new CryptoStream((Stream)memoryStream, decryptor, CryptoStreamMode.Read))
-                    {
-                        using (StreamReader streamReader = new StreamReader((Stream)cryptoStream))
-                        {
-                            return streamReader.ReadToEnd();
-                        }
-                    }
-                }
+                throw ex;
             }
         }
-            
-
 
 
         static void Main(string[] args)
         {
-            string key = "$%RFVHDE&dege6wef&^6dfegf)&8:'!@";
-            string test = "Hello world";
 
-            Console.WriteLine(EncryptString(key, test));
-            Console.WriteLine(DecryptString(key, EncryptString(key, test)));
-
-           /* DateTime dateTime = DateTime.Now;
-            DateTime old = DateTime.Now.AddMinutes(-48);
-            var dif = dateTime - old;
-            Console.WriteLine(dif);
-            Console.WriteLine(dif.TotalHours);*/
+             var res = GetInfo("93.94.220.90").Result;
+            
+            /* DateTime dateTime = DateTime.Now;
+             DateTime old = DateTime.Now.AddMinutes(-48);
+             var dif = dateTime - old;
+             Console.WriteLine(dif);
+             Console.WriteLine(dif.TotalHours);*/
             //int t = MinimumConcat("kabkcdk", "abcbcabccdak");
             //Console.WriteLine(t);
             //SemaphoreSlim semaphoreSlim = new SemaphoreSlim(1, 1);
@@ -844,5 +801,35 @@ namespace TestingConsole
             ScriptEngine engine = Python.CreateEngine();
             return engine.Execute(expression);
         }
+    }
+
+
+
+    public class IpInfo
+    {
+
+        [JsonProperty("ip")]
+        public string Ip { get; set; }
+
+        [JsonProperty("hostname")]
+        public string Hostname { get; set; }
+
+        [JsonProperty("city")]
+        public string City { get; set; }
+
+        [JsonProperty("region")]
+        public string Region { get; set; }
+
+        [JsonProperty("country")]
+        public string Country { get; set; }
+
+        [JsonProperty("loc")]
+        public string Loc { get; set; }
+
+        [JsonProperty("org")]
+        public string Org { get; set; }
+
+        [JsonProperty("postal")]
+        public string Postal { get; set; }
     }
 }

@@ -15,6 +15,7 @@ using System.Security.Principal;
 using System.Web.Security;
 using WebMatrix.WebData;
 using System.Configuration.Provider;
+using System.IdentityModel.Tokens;
 
 namespace Exam70_486Framework.Controllers
 {
@@ -120,6 +121,7 @@ namespace Exam70_486Framework.Controllers
         [AllowAnonymous]
         public async Task<ActionResult> VerifyCode(string provider, string returnUrl, bool rememberMe)
         {
+            //SecurityToken
             // Require that the user has already logged in via username/password or external login
             if (!await SignInManager.HasBeenVerifiedAsync())
             {
