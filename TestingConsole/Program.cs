@@ -403,7 +403,7 @@ namespace TestingConsole
 
 
 
-        public static  async Task<IpInfo> GetInfo(string ip)
+        public static async Task<IpInfo> GetInfo(string ip)
         {
             try
             {
@@ -421,9 +421,44 @@ namespace TestingConsole
 
         static void Main(string[] args)
         {
+            DSACryptoServiceProvider dSACryptoServiceProvider = new DSACryptoServiceProvider();
+            RSACryptoServiceProvider rSACryptoServiceProvider = new RSACryptoServiceProvider();
+            SHA1 sha = SHA1.Create();
+            byte[] hashcode = sha.ComputeHash(Encoding.UTF8.GetBytes("hello world"));
+            var b1 = dSACryptoServiceProvider.SignData(Encoding.UTF8.GetBytes("hello world"));
+            var b2 = dSACryptoServiceProvider.SignData(Encoding.UTF8.GetBytes("hello world"));
+            var b3 = dSACryptoServiceProvider.SignData(Encoding.UTF8.GetBytes("hello world"));
+            var b4 = dSACryptoServiceProvider.SignData(Encoding.UTF8.GetBytes("hello world"));
+            var b5 = dSACryptoServiceProvider.SignData(Encoding.UTF8.GetBytes("hello world"));
+            Console.WriteLine(BitConverter.ToString(b1));
+            Console.WriteLine(BitConverter.ToString(b2));
+            Console.WriteLine(BitConverter.ToString(b3));
+            Console.WriteLine(BitConverter.ToString(b4));
+            Console.WriteLine(BitConverter.ToString(b5));
+            DSA dsa = DSA.Create();
+            byte[] signature = dsa.CreateSignature(hashcode);
+            Console.WriteLine(BitConverter.ToString(signature));
+            byte[] signature1 = dsa.CreateSignature(hashcode);
+            Console.WriteLine(BitConverter.ToString(signature1));
+            byte[] signature2 = dsa.CreateSignature(hashcode);
+            Console.WriteLine(BitConverter.ToString(signature2));
+            byte[] signature3 = dsa.CreateSignature(hashcode);
+            Console.WriteLine(BitConverter.ToString(signature3));
+           
+            bool isSignatureValid = dsa.VerifySignature(hashcode, signature);
+            bool isSignatureValid1 = dsa.VerifySignature(hashcode, signature1);
+            bool isSignatureValid2 = dsa.VerifySignature(hashcode, signature2);
+            bool isSignatureValid3 = dsa.VerifySignature(hashcode, signature3);
+            Console.WriteLine(isSignatureValid);
+            Console.WriteLine(isSignatureValid1);
+            Console.WriteLine(isSignatureValid2);
+            Console.WriteLine(isSignatureValid3);
+            //dynamic d = 5;
+            //Console.WriteLine(d.GetType());
+            //d = (decimal)int.MaxValue + 1;
+            //Console.WriteLine(d.GetType());
+            //var res = GetInfo("93.94.220.90").Result;
 
-             var res = GetInfo("93.94.220.90").Result;
-            
             /* DateTime dateTime = DateTime.Now;
              DateTime old = DateTime.Now.AddMinutes(-48);
              var dif = dateTime - old;
